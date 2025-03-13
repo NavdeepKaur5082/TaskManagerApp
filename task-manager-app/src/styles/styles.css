@@ -1,0 +1,259 @@
+
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light and Dark Mode Variables */
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: rgba(0, 0, 22, 0.9);
+  --task-bg: #b1bfbe;
+  --button-bg: rgba(0, 0, 22, 0.9);
+  --button-hover: #00b351;
+}
+
+.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --task-bg: #3c3c3c;
+  --button-bg: #ff9800;
+  --button-hover: #e68900;
+}
+
+/* Container */
+.app-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--task-bg);
+  transition: background-color 0.3s ease;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+/* Buttons */
+button {
+  background-color: var(--button-bg);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--button-bg);
+  outline: none;
+}
+
+/* Task List */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.task-item:nth-child(1) { background-color: #fffa90; } /* Light Yellow */
+.task-item:nth-child(2) { background-color: #ffd3b6; } /* Peach */
+.task-item:nth-child(3) { background-color: #b5e7a0; } /* Pastel Green */
+.task-item:nth-child(4) { background-color: #c3b1e1; } /* Lavender */
+.task-item:nth-child(5) { background-color: #a0e7e5; } /* Soft Cyan */
+.task-item:nth-child(6) { background-color: #ffeb7f; } /* Soft Orange */
+.task-item:nth-child(7) { background-color: #ffb6c1; } /* Light Pink */
+.task-item:nth-child(8) { background-color: #ffcccb; } /* Light Red */
+
+
+.task-item {
+  padding: 1px;
+  gap: 15px;
+  color: #333;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.task-item:nth-child(odd) {
+  transform: rotate(2deg);
+}
+
+.task-item:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle 
+{
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Complete Button */
+.complete-btn {
+  background-color: #81c784; /* Soft Green */
+  color: black;
+}
+
+.complete-btn:hover {
+  background-color: #66a36f; /* Darker Green */
+  transform: scale(1.1);
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #e57373; /* Soft Red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c74b4b; /* Darker Red */
+  transform: scale(1.1);
+}
+
+/* Dark Mode Buttons */
+.dark.complete-btn {
+  background-color: #4caf50; /* Soft Green */
+  color: white;
+}
+
+.dark.complete-btn:hover {
+  background-color: #388e3c; /* Darker Green */
+}
+
+.delete-btn {
+  background-color: #d32f2f; /* Soft Red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #b71c1c; /* Darker Red */
+}
+
+/*
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: blue;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  color:blue;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+// Light Mode 
+
+body.light {
+  background-color: white;
+  color: blue;
+}
+
+// Dark Mode 
+body.dark 
+{
+  background-color: black;
+  color: blue;
+}
+
+.app-container {
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+*/
