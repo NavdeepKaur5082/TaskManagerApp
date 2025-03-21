@@ -38,6 +38,9 @@ Toggle between Light Mode and Dark Mode by clicking the Switch to Dark Mode or S
 7. Reorder Tasks (Drag-and-Drop)
 You can reorder your tasks by simply dragging and dropping them. This allows you to prioritize tasks as you see fit.
 
+# Find it on Vercel
+https://task-manager-app-rho-hazel.vercel.app/
+
 # Installation
 To run this project locally on your machine, follow these steps:
 
